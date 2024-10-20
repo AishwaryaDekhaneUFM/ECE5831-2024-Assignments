@@ -35,7 +35,7 @@ class MNIST_Data:
             row[y[idx]] = 1
         return encoded
 
-    def _fetch(self, f_name):
+    def _download(self, f_name):
         file_path = os.path.join(self.dir_data, f_name)
         if os.path.exists(file_path):
             print(f"File: {f_name} already exists locally.")
@@ -46,7 +46,7 @@ class MNIST_Data:
 
     def download_all(self):
         for file_name in self.key_file.values():
-            self._fetch(file_name)
+            self._download(file_name)
 
     def load_labels(self, f_name):
         with gzip.open(f_name, 'rb') as file:
