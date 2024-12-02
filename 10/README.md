@@ -77,7 +77,7 @@ The `DogsCats` class provides the following methods:
 
 ## Results
 
-The trained model achieves an accuracy of over 70% on the validation set. Detailed training and validation metrics (accuracy and loss) are plotted in the notebook.
+The trained model achieves an accuracy of over 91% on the validation set. Detailed training and validation metrics (accuracy and loss) are plotted in the notebook.
 
 ---
 
