@@ -1,84 +1,107 @@
-```markdown
-# HW10 - Dogs vs. Cats Image Classification
+# HW10: Dogs vs Cats Classification
+
+This repository contains the implementation for HW10, a project to classify images of dogs and cats using a neural network in TensorFlow. Below is an overview of the implementation details, requirements, and usage instructions.
+
+---
+
+## Table of Contents
+- [Overview](#overview)
+- [Dataset Preparation](#dataset-preparation)
+- [Model Architecture](#model-architecture)
+- [Implementation](#implementation)
+- [How to Use](#how-to-use)
+- [Results](#results)
+- [Files](#files)
+- [Links](#links)
+
+---
 
 ## Overview
-This assignment involves creating a neural network model to classify images of dogs and cats using the Dogs vs. Cats dataset from Kaggle. The task was to implement a Python class `DogsCats` to handle dataset preparation, model building, training, and prediction.
+
+The project implements a `DogsCats` class to process the "Dogs vs Cats" dataset and build a convolutional neural network (CNN) for classification. Key features include:
+- Dataset preparation: Splitting the data into training, validation, and testing sets.
+- Neural network design: Using convolutional and pooling layers for improved performance.
+- Training and evaluation: Plotting metrics like accuracy and loss.
+
+---
+
+## Dataset Preparation
+
+1. Download the dataset from Kaggle: [Dogs vs Cats Dataset](https://www.kaggle.com/competitions/dogs-vs-cats/data).  
+2. Unzip the file and rename the directory to `dogs-vs-cats-original`.
+3. The data is split as follows:
+   - **Training**: 2,400 - 11,999
+   - **Validation**: 0 - 2,399
+   - **Testing**: 12,000 - 12,499
+
+---
+
+## Model Architecture
+
+The neural network comprises:
+- Convolutional layers for feature extraction.
+- Pooling layers to reduce dimensionality.
+- Dense layers for classification.
+- Additional data augmentation for improved generalization.
+
+---
+
+## Implementation
+
+The `DogsCats` class provides the following methods:
+- **`make_dataset_folders()`**: Prepares dataset folders for train, validation, and test splits.
+- **`_make_dataset()`**: Creates TensorFlow datasets using `image_dataset_from_directory()`.
+- **`make_dataset()`**: Initializes `train_dataset`, `valid_dataset`, and `test_dataset`.
+- **`build_network()`**: Constructs the neural network and compiles it.
+- **`train()`**: Trains the model and saves it.
+- **`load_model()`**: Loads a pre-trained model.
+- **`predict()`**: Makes predictions on a given image file.
+
+---
+
+## How to Use
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Prepare the dataset:
+   - Place the unzipped dataset in the directory `dogs-vs-cats-original`.
+3. Run the Jupyter notebook:
+   ```bash
+   jupyter notebook module10.ipynb
+   ```
+4. Follow the instructions in the notebook to train the model, evaluate it, and make predictions.
+
+---
+
+## Results
+
+The trained model achieves an accuracy of over 70% on the validation set. Detailed training and validation metrics (accuracy and loss) are plotted in the notebook.
+
+---
 
 ## Files
-### Code Files
-1. **dogs_cats.py**: Contains the implementation of the `DogsCats` class with methods for dataset preparation, model building, training, and prediction.
-2. **module10.ipynb**: A Jupyter Notebook to demonstrate the functionality of the `DogsCats` class, from data preparation to training the model.
 
-### Dataset
-- **dogs-vs-cats-original**: Directory containing the original dataset downloaded from Kaggle.
-
-## Classify Images of Dogs vs. Cats
-### Implementation Details
-- **Dataset Preparation**: The dataset is divided into training, validation, and test subsets.
-  - Training: 2,400 - 11,999
-  - Validation: 0 - 2,399
-  - Test: 12,000 - 12,499
-  
-  The directory structure after splitting should look like this:
+- **`dogs_cats.py`**: Contains the `DogsCats` class implementation.
+- **`module10.ipynb`**: Jupyter notebook for running the implementation and showcasing results.
+- **Dataset Directory**: Ensure the dataset directory is structured as:
   ```
-  dogs-vs-cats/
-    ├── train/
-    ├── valid/
-    └── test/
+  dogs-vs-cats-original/
+      train/
+          dog/
+          cat/
   ```
 
-- **Model Architecture**: A Convolutional Neural Network (CNN) with convolutional, pooling, and fully connected layers.
+---
 
-### Key Class Methods
-- `__init__(self)`: Initializes `train_dataset`, `valid_dataset`, `test_dataset`, and `model` with `None`.
-- `make_dataset_folders(self, subset_name, start_index, end_index)`: Creates different subsets of the dataset for training, validation, and testing.
-- `_make_dataset(self, subset_name)`: Returns a `tf.data.Dataset` object for the specified subset.
-- `make_dataset(self)`: Creates `train_dataset`, `valid_dataset`, and `test_dataset`.
-- `build_network(self, augmentation=True)`: Builds and compiles the neural network model.
-- `train(self, model_name)`: Trains the model using the `fit()` method and can use callbacks for better performance.
-- `load_model(self, model_name)`: Loads a trained model from a file.
-- `predict(self, image_file)`: Predicts the class of an image file.
+## Links
 
-### Usage
-Perform the following steps in `module10.ipynb` to create and train the model:
+- Dataset: [Kaggle - Dogs vs Cats](https://www.kaggle.com/competitions/dogs-vs-cats/data)  
+- Model File: [Download .keras Model](https://drive.google.com/file/d/1BxHqtpflurJbH4Rgr8E1Yz4-vWd7MZBK/view?usp=drive_link)
 
-1. **Import and Initialize**: Import the `DogsCats` class and initialize an object.
-   ```python
-   from dogs_cats import DogsCats
-   dc = DogsCats()
-   ```
+---
 
-2. **Create Dataset Folders**: Use `make_dataset_folders()` to create the train, validation, and test directories.
-   ```python
-   dc.make_dataset_folders('valid', 0, 2399)
-   dc.make_dataset_folders('train', 2400, 11999)
-   dc.make_dataset_folders('test', 12000, 12499)
-   ```
+## Prepared By
 
-3. **Create Dataset Objects**: Call `make_dataset()` to create dataset objects for training, validation, and testing.
-   ```python
-   dc.make_dataset()
-   ```
-
-4. **Build and Display the Model**: Build the neural network model and display its summary.
-   ```python
-   dc.build_network()
-   dc.model.summary()
-   ```
-
-5. **Train the Model**: Train the neural network.
-   ```python
-   dc.train('model.first-name-last-name.identifier.keras')
-   ```
-
-### Results
-After successfully training the model, you can load it and make predictions on new images using the `load_model()` and `predict()` methods, respectively.
-
-## Model Link
-The trained model can be found at the following link: [model link]
-
-## Conclusion
-This assignment provided practical experience in handling image datasets, building and training convolutional neural networks, and using TensorFlow for deep learning tasks. The `DogsCats` class provides a structured approach to manage the entire machine learning workflow from data preparation to model deployment.
-
-**Prepared by:** [Aishwarya Dekhane]
-```
+- Aishwarya Dekhane - adekhane@umich.edu
