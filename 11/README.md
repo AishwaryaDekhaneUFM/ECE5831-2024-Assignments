@@ -1,5 +1,3 @@
-
-
 ```markdown
 # HW11 - Binary, Multiclass Classification, and Regression
 
@@ -67,7 +65,7 @@ Handles regression on the Boston Housing dataset (price prediction).
 2. Ensure the accuracy on test datasets exceeds **0.85** for classification tasks.
 
 ### Example Commands (in Notebook)
-```python
+
 # Binary Classification
 from imdb import Imdb
 imdb_model = Imdb()
@@ -97,7 +95,7 @@ boston_model.train()
 boston_model.plot_loss()
 boston_model.plot_accuracy()
 boston_model.evaluate()
-```
+
 ## Author
 - **Aishwarya Dekhane**
 
