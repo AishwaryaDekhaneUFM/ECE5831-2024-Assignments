@@ -25,11 +25,6 @@ The project includes the following components:
 - Matplotlib
 - Jupyter Notebook
 
-Install the dependencies using:
-```bash
-pip install tensorflow numpy matplotlib notebook
-```
-
 ## Classes and Functions
 
 ### `Imdb` Class
