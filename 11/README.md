@@ -1,104 +1,104 @@
-```markdown
-# HW11: Binary, Multiclass Classification, and Regression
+# HW11 - Binary, Multiclass Classification, and Regression
 
 ## Overview
-This assignment implements binary classification, multiclass classification, and regression using Python and deep learning techniques based on Chapter 4 of *Deep Learning with Python (2nd Edition)* by François Chollet.
 
-### Implemented Models
-1. **Binary Classification**: Using the IMDB dataset
-2. **Multiclass Classification**: Using the Reuters dataset
-3. **Regression**: Using the Boston Housing dataset
+This assignment focuses on practicing binary classification, multiclass classification, and regression using deep learning techniques described in Chapter 4 of the textbook *Deep Learning with Python [2nd Edition]* by Francois Chollet.
 
-The project contains Python classes and a Jupyter notebook showcasing the implementations.
+## Requirements
 
----
+### 1. Binary Classification - IMDB
 
-## File Structure
-- **`imdb.py`**: Contains the `Imdb` class for binary classification.
-- **`reuters.py`**: Contains the `Reuters` class for multiclass classification.
-- **`boston_housing.py`**: Contains the `BostonHousing` class for regression tasks.
-- **`module11.ipynb`**: Jupyter notebook demonstrating:
-  - Implementation of all three classes.
-  - Training, evaluation, and visualization of results.
+- **Script**: `imdb.py`
+- **Class**: `Imdb`
+- **Member Functions**:
+  - `prepare_data()`: Prepares the IMDB dataset.
+  - `build_model()`: Constructs the neural network model for binary classification.
+  - `train()`: Trains the model using the prepared data.
+  - `plot_loss()`: Plots the training and validation loss.
+  - `plot_accuracy()`: Plots the training and validation accuracy.
+  - `evaluate()`: Evaluates the model on the test dataset to show the loss and accuracy.
 
----
+### 2. Multiclass Classification - Reuters
 
-## Classes and Functions
+- **Script**: `reuters.py`
+- **Class**: `Reuters`
+- **Member Functions**:
+  - `prepare_data()`: Prepares the Reuters dataset.
+  - `build_model()`: Constructs the neural network model for multiclass classification.
+  - `train()`: Trains the model using the prepared data.
+  - `plot_loss()`: Plots the training and validation loss.
+  - `plot_accuracy()`: Plots the training and validation accuracy.
+  - `evaluate()`: Evaluates the model on the test dataset to show the loss and accuracy.
 
-### Binary Classification - IMDB (`imdb.py`)
-**Class Name**: `Imdb`  
-Member Functions:
-- `prepare_data()`: Prepares and processes the IMDB dataset.
-- `build_model()`: Builds the binary classification model.
-- `train()`: Trains the model using the prepared data.
-- `plot_loss()`: Plots training and validation loss.
-- `plot_accuracy()`: Plots training and validation accuracy.
-- `evaluate()`: Evaluates the model on the test dataset.
+### 3. Regression - Boston Housing
 
-### Multiclass Classification - Reuters (`reuters.py`)
-**Class Name**: `Reuters`  
-Member Functions:
-- `prepare_data()`: Prepares and processes the Reuters dataset.
-- `build_model()`: Builds the multiclass classification model.
-- `train()`: Trains the model using the prepared data.
-- `plot_loss()`: Plots training and validation loss.
-- `plot_accuracy()`: Plots training and validation accuracy.
-- `evaluate()`: Evaluates the model on the test dataset.
+- **Script**: `boston_housing.py`
+- **Class**: `BostonHousing`
+- **Member Functions**:
+  - `prepare_data()`: Prepares the Boston Housing dataset.
+  - `build_model()`: Constructs the neural network model for regression.
+  - `train()`: Trains the model using the prepared data.
+  - `plot_loss()`: Plots the training and validation loss.
+  - `plot_accuracy()`: Plots the training and validation accuracy.
+  - `evaluate()`: Evaluates the model on the test dataset to show the loss and accuracy.
 
-### Regression - BostonHousing (`boston_housing.py`)
-**Class Name**: `BostonHousing`  
-Member Functions:
-- `prepare_data()`: Prepares and processes the Boston Housing dataset.
-- `build_model()`: Builds the regression model.
-- `train()`: Trains the model using the prepared data.
-- `plot_loss()`: Plots training and validation loss.
-- `plot_accuracy()`: (Optional) Plots additional metrics, if applicable.
-- `evaluate()`: Evaluates the model on the test dataset.
+### 4. Jupyter Notebook
 
----
+- **Notebook**: `module11.ipynb`
+- The notebook should include implementations and demonstrations of the following classes:
+  - `Imdb`
+  - `Reuters`
+  - `BostonHousing`
 
-## Jupyter Notebook: `module11.ipynb`
-This notebook includes:
-1. Instantiating each class (`Imdb`, `Reuters`, and `BostonHousing`).
-2. Demonstrating:
-   - Data preparation
-   - Model building
-   - Training
-   - Plotting (loss and accuracy/metrics)
-   - Evaluation
-3. Results of accuracy and performance metrics.
+## Accuracy and Grading
 
----
+To meet the requirements for grading, ensure that:
 
-## Accuracy Threshold
-To meet assignment requirements, ensure:
-- **Binary Classification** and **Multiclass Classification** achieve an accuracy of **≥ 0.6**.
-- **Regression** provides meaningful predictions.
-
----
+- The classification accuracy with the test datasets is greater than 0.6.
+- Note that the classification performance will not significantly affect the grading as long as the accuracy criterion is met.
 
 ## How to Run
-1. Clone the repository or download the files.
-2. Install the required Python packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the Jupyter Notebook (`module11.ipynb`) to view the results:
-   ```bash
-   jupyter notebook module11.ipynb
-   ```
+
+1. **Binary Classification (IMDB)**:
+   - Run the `imdb.py` script.
+   - Instantiate the `Imdb` class and call its member functions in the following sequence:
+     ```python
+     imdb = Imdb()
+     imdb.prepare_data()
+     imdb.build_model()
+     imdb.train()
+     imdb.plot_loss()
+     imdb.plot_accuracy()
+     imdb.evaluate()
+     ```
+
+2. **Multiclass Classification (Reuters)**:
+   - Run the `reuters.py` script.
+   - Instantiate the `Reuters` class and call its member functions in the following sequence:
+     ```python
+     reuters = Reuters()
+     reuters.prepare_data()
+     reuters.build_model()
+     reuters.train()
+     reuters.plot_loss()
+     reuters.plot_accuracy()
+     reuters.evaluate()
+     ```
+
+3. **Regression (Boston Housing)**:
+   - Run the `boston_housing.py` script.
+   - Instantiate the `BostonHousing` class and call its member functions in the following sequence:
+     ```python
+     boston_housing = BostonHousing()
+     boston_housing.prepare_data()
+     boston_housing.build_model()
+     boston_housing.train()
+     boston_housing.plot_loss()
+     boston_housing.plot_accuracy()
+     boston_housing.evaluate()
+     ```
+
+4. **Jupyter Notebook**:
+   - Open `module11.ipynb` and run the cells demonstrating the use of `Imdb`, `Reuters`, and `BostonHousing` classes.
 
 ---
-
-## Dependencies
-- Python 3.x
-- TensorFlow 2.x
-- NumPy
-- Matplotlib
-- Jupyter Notebook
-
----
-
-## Author
-Aishwarya Dekhane
-```
