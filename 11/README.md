@@ -50,13 +50,6 @@ This assignment focuses on practicing binary classification, multiclass classifi
   - `Reuters`
   - `BostonHousing`
 
-## Accuracy and Grading
-
-To meet the requirements for grading, ensure that:
-
-- The classification accuracy with the test datasets is greater than 0.6.
-- Note that the classification performance will not significantly affect the grading as long as the accuracy criterion is met.
-
 ## How to Run
 
 1. **Binary Classification (IMDB)**:
