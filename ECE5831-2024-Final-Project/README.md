@@ -84,7 +84,7 @@ Deepfake technology poses significant ethical, legal, and societal risks. Detect
 
 ## Final Report
 
-Report: [Link to the report](#).
+Report: [https://drive.google.com/file/d/10QFnQMqEPdLg5B_YWJ3xjDZI4t2ODXSa/view?usp=drive_link](https://drive.google.com/file/d/10QFnQMqEPdLg5B_YWJ3xjDZI4t2ODXSa/view?usp=drive_link).
 
 ---
 
